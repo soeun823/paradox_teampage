@@ -1,54 +1,18 @@
-# React + TypeScript + Vite
+# 🚀 Paradox 팀 프로젝트 소개 페이지
+___
+## 기능
+- **🌟 프로젝트 소개**
+  - 최애의 사인 
+    <br> : 💖 인기 캐릭터 순위 (예정)
+프로젝트가 진행됨에 따라, 저희 서비스 내에서 가장 많은 사랑을 받은 캐릭터들의 순위를 공개할 예정입니다. 여러분의 최애 캐릭터가 몇 위를 차지할지 기대해주세요!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- **👥 팀원 소개**
 
-Currently, two official plugins are available:
+- **✍️ 방명록**
+저희 프로젝트에 대한 여러분의 소중한 의견을 남겨주세요! 로그인 없이 자유롭게 작성하실 수 있습니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **투표/설문** 
+- **❓ FAQ / 문의하기**
+자주 묻는 질문들을 모아두었습니다. 혹시 궁금한 점이 해결되지 않았다면 언제든지 문의해주세요!
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+문의하기: paradox.windeath44@gmail.com
