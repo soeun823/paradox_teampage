@@ -1,0 +1,12 @@
+@import url('https://fastly.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+
+:root {
+    --primary: #FF8EF6;
+    --dark-primary: #FD51A7;
+    --black: #2E2E2E;
+    --font: Galmuri11;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
