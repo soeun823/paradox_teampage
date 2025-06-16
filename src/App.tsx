@@ -1,8 +1,13 @@
-function App() {
+import {useEffect} from "react";
+import VideoIntro from "@/components/VideoIntro.tsx";
 
+function App() {
+    useEffect(() => {
+
+    },[])
   return (
     <>
-      파독 팀 소개 페이지
+        <VideoIntro />
     </>
   )
 }
