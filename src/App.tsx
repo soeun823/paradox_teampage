@@ -1,15 +1,22 @@
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import VideoIntro from "@/components/VideoIntro.tsx";
 
 function App() {
-    useEffect(() => {
+    const [showVideo, setShowVideo] = useState(true);
 
-    },[])
-  return (
-    <>
-        <VideoIntro />
-    </>
-  )
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowVideo(false);
+        }, 9000); // 5초
+        return () => clearTimeout(timer);
+    }, []);
+
+    return (
+        <>
+            {showVideo && <VideoIntro />}
+
+        </>
+    );
 }
 
 export default App
