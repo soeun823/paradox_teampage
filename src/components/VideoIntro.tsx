@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 import Opening from "@assets/PARADOX.mp4";
 
 function VideoIntro() {
-    const videoRef = useRef(null);
+    const videoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
         if (videoRef.current) {
