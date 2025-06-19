@@ -25,5 +25,7 @@
     "noUncheckedSideEffectImports": true
   },
   "include": ["src"],
-  "extends": "./tsconfig.path.json"
+  "exclude": [
+    "node_modules/vite/dist"
+  ]
 }
