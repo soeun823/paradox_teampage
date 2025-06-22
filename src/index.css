@@ -1,10 +1,19 @@
 @import url('https://fastly.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+@font-face {
+    font-family: 'DOSIyagiMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSIyagiMedium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 
 :root {
     --primary: #FF8EF6;
-    --dark-primary: #FD51A7;
+    --dark-primary: #E774DD;
+    --light-primary: #FFD3FB;
     --black: #2E2E2E;
+    --white: #FFFFFF;
     --font: Galmuri11;
+    --font2: DOSIyagiMedium;
 }
 *{
     margin: 0;

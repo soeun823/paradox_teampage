@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import VideoIntro from "@/components/VideoIntro.tsx";
+import Intro from "@pages/intro";
 
 function App() {
     const [showVideo, setShowVideo] = useState(true);
@@ -14,7 +15,7 @@ function App() {
     return (
         <>
             {showVideo && <VideoIntro />}
-
+            {!showVideo && <Intro />}
         </>
     );
 }
