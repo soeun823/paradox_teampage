@@ -31,12 +31,20 @@ const Intro = () => {
 }
 const Windows = () => {
     return (
-        <_.window>
-            <_.w_header>
-                <div>♥︎ 소개</div>
-            </_.w_header>
-            <_.w_bady></_.w_bady>
-        </_.window>
+        <>
+            <_.window style={{ top: 0, left: 100, zIndex: 3 }}>
+                <_.w_header>♥ 소개.txt</_.w_header>
+                <_.w_bady />
+            </_.window>
+            <_.window style={{ top: 30, left: 130, zIndex: 2 }}>
+                <_.w_header>♥ 소개.txt</_.w_header>
+                <_.w_bady />
+            </_.window>
+            <_.window style={{ top: 60, left: 160, zIndex: 1 }}>
+                <_.w_header>♥ 소개.txt</_.w_header>
+                <_.w_bady />
+            </_.window>
+        </>
     );
 }
 

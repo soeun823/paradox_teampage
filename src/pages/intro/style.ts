@@ -13,18 +13,27 @@ export const main = styled.div`
 export const info = styled.div`
     width: 100%;
     height: 100vh;
+    padding-right: 48px;
+    font-size: 1.5rem;
     display:flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     box-sizing: border-box;
     color: var(--white);
 `;
 export const title = styled.div`
-    //display:flex;
-    //align-items: flex-start;
-    //justify-content: flex-start;
-    //flex-direction: column;
+    font-family: var(--font);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    & > :first-of-type {
+        font-size: 2.5rem;
+    }
+
+    & > :last-of-type {
+        font-size: 3rem;
+    }
 `;
 
 export const descrips = styled.div`
@@ -33,7 +42,7 @@ export const descrips = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+    position: relative;
 `;
 export const window = styled.div`
     width: 100%;
@@ -45,6 +54,8 @@ export const window = styled.div`
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    
+    position: absolute;
 `;
 export const w_header = styled.div`
     width: 100%;
