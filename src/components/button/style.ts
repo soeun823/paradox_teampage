@@ -5,13 +5,13 @@ export const Button = styled.button`
   margin-right: 14px;
   font-weight: 600;
   font-size: 18px;
-  background-color: #fff;
+  background-color: var(--black);
   border: none;
   color: ${(props) => props.color };
   border-radius: 7.5px;
   cursor: pointer;
   outline: none;
   &:hover {
-    background: var(--primary);
+    color: var(--primary);  
   }
 `;

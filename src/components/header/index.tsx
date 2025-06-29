@@ -16,7 +16,7 @@ const Header= ()=> {
                             <a href={item.to} key={item.id}>
                                 <Button
                                     title={item.title}
-                                    color={"var(----primary)"}
+                                    color={`var(--white)`}
                                     onClick={() => console.log(item)}
                                 />
                             </a>
