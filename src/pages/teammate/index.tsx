@@ -15,8 +15,7 @@ const teammate: FC = () => {
     const profile2 = profile.filter((item: Profile) => item.id >= 2);
 
     return (
-        <_.main>
-
+        <_.main id="1">
                 <_.list>
                     {profile1.map((item: Profile) => (
                         <Profiles key={item.id} name={item.name} role={item.role} img={item.img} />

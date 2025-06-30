@@ -2,7 +2,7 @@ import * as _ from "@pages/intro/style.ts"
 
 const Intro = () => {
     return (
-        <_.main>
+        <_.main id="0">
             <_.info>
                 <_.title>
                     <div>
