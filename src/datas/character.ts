@@ -4,8 +4,8 @@ import min_teto from '@assets/character/pixel/kasane teto.svg';
 import max_teto from '@assets/character/real/kasane teto.svg';
 import min_gumi from '@assets/character/pixel/Gumi.svg';
 import max_gumi from '@assets/character/real/Gumi.svg';
-import min_miku from '@assets/character/pixel/Gumi.svg';
-import max_miku from '@assets/character/real/Gumi.svg';
+import min_miku from '@assets/character/pixel/Miku V4.svg';
+import max_miku from '@assets/character/real/Miku V4.svg';
 
 export default[
   { "id": 0, "name":"teto AI", "pixel":min_tetoAI, "real":max_tetoAI},
