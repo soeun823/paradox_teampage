@@ -17,6 +17,7 @@ export const info = styled.div`
     position: absolute;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
 `;
 export const text = styled.div`
     width: 100%;
