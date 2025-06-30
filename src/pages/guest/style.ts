@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import Skeleton from '@assets/skeleton.svg';
 
 export const main = styled.div`
     width: 100vw;
@@ -7,7 +8,9 @@ export const main = styled.div`
 export const section = styled.div`
     width: 70%;
     height: 100%;
-    margin: 0px auto;
+    margin: 0 auto;
+    background-image: url(${Skeleton});
+    background-position: center;
     @media (max-width: 768px) {
         margin: 0;
     }
