@@ -1,6 +1,7 @@
 import {type FC, useEffect, useRef, useState} from "react";
 import * as _ from './style';
 import character from "@datas/character.ts";
+import View from "@components/view";
 
 interface Position {
     x: number;
@@ -10,6 +11,7 @@ interface Position {
 const GuestPage: FC = () => {
     const vocalRef = useRef<HTMLDivElement>(null);
     const [positions, setPositions] = useState<Position[]>([]);
+    const [selectedChar, setSelectedChar] = useState<null | typeof character[0]>(null);
 
     useEffect(() => {
         if (vocalRef.current) {
@@ -22,12 +24,22 @@ const GuestPage: FC = () => {
         }
     }, []);
 
+    const handleBook = (char: typeof character[0]) => {
+        setSelectedChar(char);
+    };
+    const handleCloseBook = () => {
+        setSelectedChar(null);
+    };
+
 
     return (
         <_.main id="3">
             <_.section ref={vocalRef}>
                 {character.map((char, index) => (
-                    <_.charaterSet style={{
+                    <>
+                    <_.charaterSet
+                        onClick={() => handleBook(char)}
+                        style={{
                         left: positions[index]?.x || 0,
                         top: positions[index]?.y || 0,
                     }}>
@@ -38,7 +50,15 @@ const GuestPage: FC = () => {
                     />
                     <_.charaterName>{char.name}</_.charaterName>
                     </_.charaterSet>
+                    </>
                 ))}
+                {selectedChar && (
+                    <View
+                        name={selectedChar.name}
+                        img={selectedChar.real}
+                        set={handleCloseBook}
+                    />
+                )}
             </_.section>
         </_.main>
     )
