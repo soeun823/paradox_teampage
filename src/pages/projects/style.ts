@@ -6,6 +6,7 @@ export const main = styled.div`
     font-family: var(--font);
     margin: 0 200px;
     background-color: var(--black);
+;
 `;
 
 export const Img = styled.img`

@@ -11,6 +11,7 @@ export const Button = styled.button`
   border-radius: 7.5px;
   cursor: pointer;
   outline: none;
+  font-family: var(--font); 
   &:hover {
     color: var(--primary);  
   }
