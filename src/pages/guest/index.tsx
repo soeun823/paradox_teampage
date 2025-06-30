@@ -1,10 +1,12 @@
 import type {FC} from "react";
+import * as _ from './style';
 
 const GuestPage: FC = () => {
     return (
-        <>
-            방멸록
-        </>
+        <_.main id="3">
+            <_.section>
+            </_.section>
+        </_.main>
     )
 }
 export default GuestPage
