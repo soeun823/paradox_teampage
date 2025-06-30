@@ -8,7 +8,7 @@ function App() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowVideo(false);
-        }, 9000); // 5초
+        }, 9000);
         return () => clearTimeout(timer);
     }, []);
 
