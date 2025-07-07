@@ -9,13 +9,13 @@ export const Header = styled.div`
   display: flex;
   justify-content: center;
   width: 100vw;
-  height: 60px;
+  height: 80px;
   background-color: var(--black);
   z-index: 1;
 `;
 
 export const InnerFrame = styled.div`
-  width: 81.25%;
+  width: 70%;
   display: flex;
   align-items: center;
   justify-content: space-between;
