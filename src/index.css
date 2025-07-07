@@ -11,7 +11,7 @@
     --dark-primary: #E774DD;
     --light-primary: #FFD3FB;
     --black: #2E2E2E;
-    --white: #FFFFFF;
+    --white: rgb(255, 255, 255);
     --non: rgba(0, 0, 0, 0);
     --font: Galmuri11;
     --font2: DOSIyagiMedium;

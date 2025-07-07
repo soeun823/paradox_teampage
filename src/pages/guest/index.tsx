@@ -52,14 +52,14 @@ const GuestPage: FC = () => {
                     </_.charaterSet>
                     </>
                 ))}
-                {selectedChar && (
-                    <View
-                        name={selectedChar.name}
-                        img={selectedChar.real}
-                        set={handleCloseBook}
-                    />
-                )}
             </_.section>
+            {selectedChar && (
+                <View
+                    name={selectedChar.name}
+                    img={selectedChar.real}
+                    set={handleCloseBook}
+                />
+            )}
         </_.main>
     )
 }

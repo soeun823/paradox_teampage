@@ -4,6 +4,7 @@ import Skeleton from '@assets/skeleton.svg';
 export const main = styled.div`
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 `;
 export const section = styled.div`
     width: 70%;
