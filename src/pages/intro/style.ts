@@ -56,7 +56,7 @@ export const window = styled.div<{p:number}>`
     width: 100%;
     height: 30%;
     margin-left:${props => (props.p ? props.p : 0)}%;
-    margin-bottom: -30%;
+    margin-bottom: -20%;
     border: 2px solid var(--primary);
     background-color: var(--white);
     padding: 12px;
