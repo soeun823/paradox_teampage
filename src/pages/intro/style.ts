@@ -2,17 +2,26 @@ import styled from "@emotion/styled";
 
 
 export const main = styled.div`
+    width: 100vw;
     height: 100vh;
     font-family: var(--font);
-    margin: 0 200px;
+`;
+export const section = styled.div`
+    height: 100%;
+    width: 70%;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--black);
+    @media (max-width: 1024px) {
+        margin: 0;
+        width: 100%;
+    }
 `;
 export const info = styled.div`
     width: 100%;
-    height: 100vh;
+    height: 100%;
     padding-right: 48px;
     font-size: 1.5rem;
     display:flex;
@@ -30,7 +39,6 @@ export const title = styled.div`
     & > :first-of-type {
         font-size: 2.5rem;
     }
-
     & > :last-of-type {
         font-size: 3rem;
     }
@@ -38,7 +46,7 @@ export const title = styled.div`
 
 export const descrips = styled.div`
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -46,7 +54,7 @@ export const descrips = styled.div`
 `;
 export const window = styled.div`
     width: 100%;
-    height: 30vh;
+    height: 30%;
     border: 2px solid var(--primary);
     background-color: var(--white);
     padding: 12px;

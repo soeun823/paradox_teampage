@@ -3,6 +3,7 @@ import * as _ from "@pages/intro/style.ts"
 const Intro = () => {
     return (
         <_.main id="0">
+            <_.section>
             <_.info>
                 <_.title>
                     <div>
@@ -26,6 +27,7 @@ const Intro = () => {
             <_.descrips>
                 <Windows></Windows>
             </_.descrips>
+            </_.section>
         </_.main>
     );
 }

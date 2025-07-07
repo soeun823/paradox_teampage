@@ -14,11 +14,11 @@ export const section = styled.div`
     position: relative;
     overflow: hidden;
     
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
         margin: 0;
+        width: 100%;
     }
 `;
-
 export const charaterSet = styled.div`
     position: absolute;
     width: auto;
