@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Header = styled.div`
-  position: sticky;
+  position: fixed;
   left: 0;
   top: 0;
   right: 0;
@@ -9,7 +9,7 @@ export const Header = styled.div`
   display: flex;
   justify-content: center;
   width: 100vw;
-  height: 80px;
+  height: 10vh;
   background-color: var(--black);
   z-index: 1;
 `;
