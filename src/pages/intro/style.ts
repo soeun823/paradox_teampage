@@ -52,7 +52,7 @@ export const descrips = styled.div`
     flex-direction: column;
     justify-content: center;
 `;
-export const window = styled.div<{p:number}>`
+export const window = styled.div<{p?:number}>`
     width: 100%;
     height: 30%;
     margin-left:${props => (props.p ? props.p : 0)}%;
