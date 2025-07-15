@@ -1,16 +1,15 @@
 import header from '@datas/header.json';
 import Button from '@components/button';
 import Logo from '@assets/logo.svg';
-import * as S from './style';
-
+import * as _ from './style';
 const Header= ()=> {
     return (
-        <S.Header>
-            <S.InnerFrame>
+        <_.Header>
+            <_.InnerFrame>
                 <a href="/#main">
-                    <S.Logo src={Logo} />
+                    <_.Logo src={Logo} />
                 </a>
-                <S.Nav>
+                <_.Nav>
                     {header.map((item) => {
                         return (
                             <a href={item.to} key={item.id}>
@@ -22,9 +21,9 @@ const Header= ()=> {
                             </a>
                         );
                     })}
-                </S.Nav>
-            </S.InnerFrame>
-        </S.Header>
+                </_.Nav>
+            </_.InnerFrame>
+        </_.Header>
     );
 }
 export default Header;
