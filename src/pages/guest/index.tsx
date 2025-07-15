@@ -2,7 +2,6 @@ import {type FC, useEffect, useRef, useState} from "react";
 import * as _ from './style';
 import character from "@datas/character.ts";
 import View from "@components/view";
-
 interface Position {
     x: number;
     y: number;

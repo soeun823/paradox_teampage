@@ -1,5 +1,4 @@
 import * as _ from "@pages/intro/style.ts"
-
 const Intro = () => {
     return (
         <_.main id="0">
