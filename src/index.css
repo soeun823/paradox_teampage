@@ -1,23 +1,24 @@
-@import url('https://fastly.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+@import url("https://fastly.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
 @font-face {
-    font-family: 'DOSIyagiMedium';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSIyagiMedium.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "DOSIyagiMedium";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSIyagiMedium.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
 
 :root {
-    --primary: #FF8EF6;
-    --dark-primary: #E774DD;
-    --light-primary: #FFD3FB;
-    --black: #2E2E2E;
-    --white: rgb(255, 255, 255);
-    --non: rgba(0, 0, 0, 0);
-    --font: Galmuri11;
-    --font2: DOSIyagiMedium;
+  --primary: #ff8ef6;
+  --dark-primary: #e774dd;
+  --light-primary: #ffd3fb;
+  --black: #2e2e2e;
+  --white: rgb(255, 255, 255);
+  --non: rgba(0, 0, 0, 0);
+  --font: Galmuri11;
+  --font2: DOSIyagiMedium;
 }
-*{
-    margin: 0;
-    padding: 0;
-    background: var(--black);
+* {
+  margin: 0;
+  padding: 0;
+  background: var(--black);
 }

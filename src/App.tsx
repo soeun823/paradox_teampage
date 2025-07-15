@@ -1,27 +1,27 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import VideoIntro from "@/components/VideoIntro.tsx";
 import Pages from "@/pages";
 
 function App() {
-    const [showVideo, setShowVideo] = useState<boolean>(() => {
-        return localStorage.getItem('hasBooted') !== 'true';
-    });
-    useEffect(() => {
-        if (showVideo) {
-            setTimeout(() => {
-                localStorage.setItem('hasBooted', 'true');
-                setShowVideo(false);
-            }, 9000);
-        }
-    }, [showVideo]);
+  const [showVideo, setShowVideo] = useState<boolean>(() => {
+    return localStorage.getItem("hasBooted") !== "true";
+  });
+  useEffect(() => {
     if (showVideo) {
-        return <VideoIntro />;
+      setTimeout(() => {
+        localStorage.setItem("hasBooted", "true");
+        setShowVideo(false);
+      }, 9000);
     }
-    return (
-        <>
-            <Pages/>
-        </>
-    );
+  }, [showVideo]);
+  if (showVideo) {
+    return <VideoIntro />;
+  }
+  return (
+    <>
+      <Pages />
+    </>
+  );
 }
 
-export default App
+export default App;

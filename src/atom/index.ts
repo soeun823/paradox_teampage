@@ -1,13 +1,13 @@
-import { create } from 'zustand';
+import { create } from "zustand";
 
 type RadioState = {
-    radio: number;
-    setRadio: (value: number) => void;
+  radio: number;
+  setRadio: (value: number) => void;
 };
 
 const useRadioStore = create<RadioState>((set) => ({
-    radio: 1,
-    setRadio: (value: number) => set({ radio: value }),
+  radio: 1,
+  setRadio: (value: number) => set({ radio: value }),
 }));
 
 export default useRadioStore;

@@ -17,5 +17,5 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
-  },
+  }
 }

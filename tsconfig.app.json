@@ -25,7 +25,5 @@
     "noUncheckedSideEffectImports": true
   },
   "include": ["src"],
-  "exclude": [
-    "node_modules/vite/dist"
-  ]
+  "exclude": ["node_modules/vite/dist"]
 }
