@@ -2,7 +2,10 @@ import header from '@datas/header.json';
 import Button from '@components/button';
 import Logo from '@assets/logo.svg';
 import * as _ from './style';
+import {useLocationStore} from "@/store/navigationStore.ts";
 const Header= ()=> {
+    const isLocate = useLocationStore((state) => state.isLocate);
+    console.log(isLocate);
     return (
         <_.Header>
             <_.InnerFrame>
@@ -15,7 +18,7 @@ const Header= ()=> {
                             <a href={item.to} key={item.id}>
                                 <Button
                                     title={item.title}
-                                    color={`var(--white)`}
+                                    isActive={isLocate === item.id}
                                     onClick={() => console.log(item)}
                                 />
                             </a>

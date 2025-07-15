@@ -1,16 +1,17 @@
-import * as S from './style';
+import * as _ from './style';
 
 interface PropsType {
     title: string;
-    color: string | undefined;
+    isActive: boolean;
     onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-export default function Button({ title, color, onClick }: PropsType) {
+export default function Button({ title, onClick,isActive }: PropsType) {
+
     return (
-        <S.Button onClick={onClick} color={color}>
+        <_.Button isActive={isActive} onClick={onClick}>
             {title}
-        </S.Button>
+        </_.Button>
     );
 }
 

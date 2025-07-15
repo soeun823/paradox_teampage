@@ -5,18 +5,19 @@ import Teammate from "@pages/teammate";
 import Guest from "@pages/guest";
 import Projects from "@pages/projects";
 import type {FC} from "react";
+import {useLocationStore} from "@/store/navigationStore.ts";
 
 const pages :FC =() =>{
+    const setIsLocate = useLocationStore((state) => state.setIsLocate);
     return (
         <>
             <Header />
             <ReactFullpage
-                anchors={[
-                    'introduce',
-                    'teammate',
-                    'projects',
-                    'guest'
-                ]}
+                anchors={['introduce', 'teammate', 'projects', 'guest']}
+                afterLoad={(origin, destination, direction,) => {
+                    console.log('afterLoad', { origin, destination, direction });
+                    setIsLocate(destination.index);
+                }}
                 credits={{ enabled: false }}
                 render={() => {
                     return (
