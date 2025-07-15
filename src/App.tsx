@@ -3,19 +3,23 @@ import VideoIntro from "@/components/VideoIntro.tsx";
 import Pages from "@/pages";
 
 function App() {
-    const [showVideo, setShowVideo] = useState(true);
-
+    const [showVideo, setShowVideo] = useState<boolean>(() => {
+        return localStorage.getItem('hasBooted') !== 'true';
+    });
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowVideo(false);
-        }, 9000);
-        return () => clearTimeout(timer);
-    }, []);
-
+        if (showVideo) {
+            setTimeout(() => {
+                localStorage.setItem('hasBooted', 'true');
+                setShowVideo(false);
+            }, 9000);
+        }
+    }, [showVideo]);
+    if (showVideo) {
+        return <VideoIntro />;
+    }
     return (
         <>
-            {showVideo && <VideoIntro />}
-            {!showVideo && <Pages/>}
+            <Pages/>
         </>
     );
 }
