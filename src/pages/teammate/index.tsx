@@ -21,6 +21,7 @@ const teammate: FC = () => {
                     {profile1.map((item: Profile) => (
                         <Profiles key={item.id} name={item.name} role={item.role} img={item.img} />
                     ))}
+                    <_.item/>
                 </_.list>
                 <_.list>
                     {profile2.map((item: Profile) => (

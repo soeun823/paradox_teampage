@@ -2,7 +2,9 @@ import styled from "@emotion/styled";
 
 export const main = styled.div`
     width: 100vw;
-    height: 100vh;
+    height: 100%;
+    display: flex;
+    align-items: center;
 `;
 export const section = styled.div`
     width: 70%;
@@ -22,7 +24,10 @@ export const section = styled.div`
 export const list = styled.div`
     box-sizing: border-box;
     display: flex;
-    justify-content: flex-start;
-    gap: 2rem;
-    height: 30%;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+`;
+export const item = styled.div`
+    width: 30%;
 `;

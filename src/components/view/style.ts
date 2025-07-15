@@ -63,10 +63,9 @@ export const move = styled.div`
     font-size: 1rem;
     background-color: var(--non);
     color: var(--white);
-
+    box-sizing: border-box;
     &:hover {
         cursor: pointer;
-        box-sizing: border-box;
         background-color: rgba(255, 255, 255, 0.3);
         border: #ffffff solid 2px;
     }
