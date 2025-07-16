@@ -32,7 +32,7 @@ export const Nav = styled.nav`
   align-items: center;
 `;
 export const LocationItem = styled.a`
-    margin: auto;
-    padding: 0 1vw;
-    box-sizing: border-box;
+  margin: auto;
+  padding: 0 1vw;
+  box-sizing: border-box;
 `;
