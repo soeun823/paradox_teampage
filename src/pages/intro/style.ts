@@ -2,7 +2,8 @@ import styled from "@emotion/styled";
 
 export const main = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 92vh;
+  margin-top: 8vh;
   font-family: var(--font);
 `;
 export const section = styled.div`
