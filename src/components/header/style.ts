@@ -28,13 +28,11 @@ export const Logo = styled.img`
   height: 40%;
 `;
 export const Nav = styled.nav`
-  //box-sizing: border-box;
-  width: fit-content;
   display: flex;
   align-items: center;
-  //gap: 5%;
 `;
 export const LocationItem = styled.a`
-  width: fit-content;
-  height: fit-content;
+    margin: auto;
+    padding: 0 1vw;
+    box-sizing: border-box;
 `;

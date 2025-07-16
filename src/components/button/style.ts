@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Button = styled.button<{ isActive: boolean }>`
-  padding: 10%;
-  font-size: 18px;
+    font-size: clamp(2vmin, 2vmin,2vmin);
   background-color: var(--black);
   border: none;
   color: ${({ isActive }) => (!isActive ? "var(--white)" : "var(--primary)")};

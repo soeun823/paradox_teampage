@@ -15,13 +15,13 @@ const Header = () => {
         <_.Nav>
           {header.map((item) => {
             return (
-              <a href={item.to} key={item.id}>
+              <_.LocationItem href={item.to} key={item.id}>
                 <Button
                   title={item.title}
                   isActive={isLocate === item.id}
                   onClick={() => console.log(item)}
                 />
-              </a>
+              </_.LocationItem>
             );
           })}
         </_.Nav>
