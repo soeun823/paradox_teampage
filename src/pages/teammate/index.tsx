@@ -8,6 +8,7 @@ interface Profile {
   name: string;
   role: string;
   img: string;
+  github: string;
 }
 
 const teammate: FC = () => {
@@ -24,6 +25,7 @@ const teammate: FC = () => {
               name={item.name}
               role={item.role}
               img={item.img}
+              onClick={item.github}
             />
           ))}
           <_.item />
@@ -35,6 +37,7 @@ const teammate: FC = () => {
               name={item.name}
               role={item.role}
               img={item.img}
+              onClick={item.github}
             />
           ))}
         </_.list>
