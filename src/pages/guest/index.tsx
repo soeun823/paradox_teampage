@@ -1,23 +1,35 @@
 import { type FC, useEffect, useRef, useState } from "react";
 import * as _ from "./style";
 import character from "@datas/character.ts";
-import View from "@components/view";
+import guest from "@datas/guest.ts";
+import View from "@components/view/viewer";
 interface Position {
   x: number;
   y: number;
 }
 
 const GuestPage: FC = () => {
+  const guestbook = guest.map((guest) => {
+    const randomCharacter =
+      character[Math.floor(Math.random() * character.length)];
+    return {
+      name: guest.name,
+      character: randomCharacter.id,
+      pixel: randomCharacter.pixel,
+      real: randomCharacter.real,
+      comment: guest.comment,
+    };
+  });
   const vocalRef = useRef<HTMLDivElement>(null);
   const [positions, setPositions] = useState<Position[]>([]);
   const [selectedChar, setSelectedChar] = useState<
-    null | (typeof character)[0]
+    null | (typeof guestbook)[0]
   >(null);
 
   useEffect(() => {
     if (vocalRef.current) {
       const { offsetWidth, offsetHeight } = vocalRef.current;
-      const newPositions = character.map(() => ({
+      const newPositions = guestbook.map(() => ({
         x: Math.random() * (offsetWidth - 100),
         y: Math.random() * (offsetHeight - 100),
       }));
@@ -25,7 +37,7 @@ const GuestPage: FC = () => {
     }
   }, []);
 
-  const handleBook = (char: (typeof character)[0]) => {
+  const handleBook = (char: (typeof guestbook)[0]) => {
     setSelectedChar(char);
   };
   const handleCloseBook = () => {
@@ -35,7 +47,7 @@ const GuestPage: FC = () => {
   return (
     <_.main id="3">
       <_.section ref={vocalRef}>
-        {character.map((char, index) => (
+        {guestbook.map((char, index) => (
           <>
             <_.charaterSet
               onClick={() => handleBook(char)}
@@ -44,7 +56,11 @@ const GuestPage: FC = () => {
                 top: positions[index]?.y || 0,
               }}
             >
-              <_.charaterImg key={char.id} src={char.pixel} alt={char.name} />
+              <_.charaterImg
+                key={char.character}
+                src={char.pixel}
+                alt={char.name}
+              />
               <_.charaterName>{char.name}</_.charaterName>
             </_.charaterSet>
           </>
@@ -54,6 +70,7 @@ const GuestPage: FC = () => {
         <View
           name={selectedChar.name}
           img={selectedChar.real}
+          comment={selectedChar.comment}
           set={handleCloseBook}
         />
       )}

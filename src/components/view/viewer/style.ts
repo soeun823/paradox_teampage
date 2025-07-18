@@ -29,16 +29,17 @@ export const text = styled.div`
   width: 100%;
   box-sizing: border-box;
   padding: 0.5rem;
-  & > div {
-    padding: 1rem;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    background-color: rgba(46, 46, 46, 0.5);
-    font-size: 1.5rem;
-    color: var(--white);
-    font-family: var(--font);
-  }
+  position: relative;
+`;
+export const comment = styled.div`
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: rgba(46, 46, 46, 0.5);
+  font-size: 1.5rem;
+  color: var(--white);
+  font-family: var(--font);
 `;
 
 export const list = styled.div`
@@ -68,4 +69,14 @@ export const move = styled.div`
     background-color: rgba(255, 255, 255, 0.3);
     border: #ffffff solid 2px;
   }
+`;
+export const userName = styled.div`
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 1.5rem;
+  color: var(--white);
+  font-family: var(--font);
+  position: absolute;
+  right: 0;
+  top: -2.75rem;
 `;
