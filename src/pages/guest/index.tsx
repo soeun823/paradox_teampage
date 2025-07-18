@@ -7,19 +7,19 @@ interface Position {
   x: number;
   y: number;
 }
+const guestbook = guest.map((guest) => {
+  const randomCharacter =
+    character[Math.floor(Math.random() * character.length)];
+  return {
+    name: guest.name,
+    character: randomCharacter.id,
+    pixel: randomCharacter.pixel,
+    real: randomCharacter.real,
+    comment: guest.comment,
+  };
+});
 
 const GuestPage: FC = () => {
-  const guestbook = guest.map((guest) => {
-    const randomCharacter =
-      character[Math.floor(Math.random() * character.length)];
-    return {
-      name: guest.name,
-      character: randomCharacter.id,
-      pixel: randomCharacter.pixel,
-      real: randomCharacter.real,
-      comment: guest.comment,
-    };
-  });
   const vocalRef = useRef<HTMLDivElement>(null);
   const [positions, setPositions] = useState<Position[]>([]);
   const [selectedChar, setSelectedChar] = useState<

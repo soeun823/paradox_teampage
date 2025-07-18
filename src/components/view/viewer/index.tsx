@@ -1,7 +1,5 @@
 import type { JSX } from "react";
 import * as _ from "./style.ts";
-import { comment, userName } from "./style.ts";
-
 interface PropsType {
   name: string;
   img: string;
