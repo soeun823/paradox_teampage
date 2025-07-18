@@ -1,5 +1,15 @@
 import styled from "@emotion/styled";
-
+import { keyframes } from "@emotion/react";
+const slideUp = keyframes`
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
 export const main = styled.div`
   width: 30%;
   height: fit-content;
@@ -20,6 +30,7 @@ export const info = styled.div`
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
+  animation: ${slideUp} 0.3s ease forwards;
 `;
 export const text = styled.div`
   width: 100%;

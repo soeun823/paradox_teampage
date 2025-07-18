@@ -41,7 +41,7 @@ const view: ({ name, img, set }: PropsType) => JSX.Element = ({
           })}
         </_.list>
         <_.text>
-          <_.userName>{name}</_.userName>
+          <_.userName>【 {name} 】</_.userName>
           <_.comment>{comment}</_.comment>
         </_.text>
       </_.info>
