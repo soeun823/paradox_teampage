@@ -3,6 +3,7 @@ import * as _ from "./style";
 import character from "@datas/character.ts";
 import { loadUserData } from "@/api/user";
 import View from "@components/view/viewer";
+import { useSelectedCharStore } from "@/store/selectedCharStore.ts";
 
 interface Position {
   x: number;
@@ -21,7 +22,10 @@ const GuestPage: FC = () => {
   const vocalRef = useRef<HTMLDivElement>(null);
   const [guestbook, setGuestbook] = useState<GuestbookEntry[]>([]);
   const [positions, setPositions] = useState<Position[]>([]);
-  const [selectedChar, setSelectedChar] = useState<null | GuestbookEntry>(null);
+  // const [selectedChar, setSelectedChar] = useState<null | GuestbookEntry>(null);
+  const setSelectedCharStore = useSelectedCharStore(
+    (state) => state.setSelectedChar,
+  );
 
   useEffect(() => {
     async function fetchGuest() {
@@ -54,12 +58,17 @@ const GuestPage: FC = () => {
   }, [guestbook]);
 
   const handleBook = (char: GuestbookEntry) => {
-    setSelectedChar(char);
+    setSelectedCharStore({
+      name: char.name,
+      real: char.real,
+      comment: char.comment,
+    });
   };
 
-  const handleCloseBook = () => {
-    setSelectedChar(null);
-  };
+  const selectedChar = useSelectedCharStore((state) => state.selectedChar);
+  const clearSelectedChar = useSelectedCharStore(
+    (state) => state.clearSelectedChar,
+  );
 
   return (
     <_.main id="3">
@@ -83,7 +92,7 @@ const GuestPage: FC = () => {
           name={selectedChar.name}
           img={selectedChar.real}
           comment={selectedChar.comment}
-          set={handleCloseBook}
+          set={clearSelectedChar}
         />
       )}
     </_.main>
