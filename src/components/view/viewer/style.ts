@@ -31,7 +31,7 @@ export const text = styled.div`
   padding: 0.5rem;
   position: relative;
 `;
-export const comment = styled.div`
+export const comment = styled.textarea`
   padding: 1rem;
   width: 100%;
   height: 100%;
@@ -40,6 +40,9 @@ export const comment = styled.div`
   font-size: 1.5rem;
   color: var(--white);
   font-family: var(--font);
+  outline: none;
+  border: none;
+  resize: none;
 `;
 
 export const list = styled.div`

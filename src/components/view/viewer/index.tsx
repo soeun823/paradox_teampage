@@ -42,7 +42,7 @@ const Viewer = ({ setMode }: PropsType) => {
         </_.list>
         <_.text>
           <_.userName>【 {selectedChar?.name} 】</_.userName>
-          <_.comment>{selectedChar?.comment}</_.comment>
+          <_.comment readOnly>{selectedChar?.comment}</_.comment>
         </_.text>
       </_.info>
     </_.infoSet>
