@@ -81,3 +81,27 @@ export const userName = styled.div`
   right: 0;
   top: -2.75rem;
 `;
+export const inputName = styled.input`
+  box-sizing: border-box;
+  width: fit-content;
+  padding: 0.25rem;
+  font-size: 1.25rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--white);
+  font-family: var(--font);
+  outline: none;
+  border: none;
+`;
+export const inputComment = styled.textarea`
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 0.25rem;
+  font-size: 1.25rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--white);
+  font-family: var(--font);
+  outline: none;
+  border: none;
+  resize: none;
+`;

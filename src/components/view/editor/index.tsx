@@ -24,18 +24,23 @@ const Editor = ({ setMode }: PropsType) => {
         <_.text>
           <_.userName>
             【
-            <input
+            <_.inputName
               type={"text"}
               value={name}
               onChange={(e) => setName(e.target.value)}
+              placeholder={"**이름을 작성해주세요."}
             />
             】
           </_.userName>
           <_.comment>
-            <input
-              type={"text"}
+            <_.inputComment
               value={comment}
               onChange={(e) => setComment(e.target.value)}
+              placeholder={
+                "자유롭게 작성해주세요\n" +
+                "**캐릭터는 랜덤으로 배정 됩니다.\n" +
+                "**최대 40자까지 작성 가능합니다"
+              }
             />
           </_.comment>
         </_.text>
