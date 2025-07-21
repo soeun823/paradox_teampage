@@ -11,7 +11,7 @@ interface Position {
 
 interface GuestbookEntry {
   name: string;
-  character: string;
+  character: number;
   pixel: string;
   real: string;
   comment: string;
