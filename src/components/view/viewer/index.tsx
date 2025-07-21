@@ -6,8 +6,7 @@ interface PropsType {
   comment: string;
   set: () => void;
 }
-
-const view: ({ name, img, set }: PropsType) => JSX.Element = ({
+const Viewer: ({ name, img, set }: PropsType) => JSX.Element = ({
   name,
   img,
   comment,
@@ -48,4 +47,4 @@ const view: ({ name, img, set }: PropsType) => JSX.Element = ({
     </_.infoSet>
   );
 };
-export default view;
+export default Viewer;
