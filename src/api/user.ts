@@ -1,11 +1,13 @@
 import { supabase } from "@/config";
-
-export interface User {
-  id: number;
+import type { PostgrestError } from "@supabase/supabase-js";
+interface sendUser {
   name: string;
   comment: string;
 }
-export const userData: User[] = [];
+interface User extends sendUser {
+  id: number;
+}
+const userData: User[] = [];
 export async function loadUserData(): Promise<User[]> {
   const { data, error } = await supabase.from("User").select("*");
   if (error) {
@@ -19,3 +21,18 @@ export async function loadUserData(): Promise<User[]> {
   }
   return userData;
 }
+
+export const insertUserData = async ({
+  name,
+  comment,
+}: sendUser): Promise<sendUser | PostgrestError | null> => {
+  const { data, error } = await supabase
+    .from("User")
+    .insert([{ name: name, comment: comment }])
+    .select();
+  if (error) {
+    console.error("Error inserting user:", error);
+    throw error;
+  }
+  return data ? data[0] : null;
+};
