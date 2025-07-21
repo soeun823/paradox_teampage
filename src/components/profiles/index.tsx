@@ -12,8 +12,6 @@ interface infoType {
 
 const Profile: FC<PropsType> = ({ name, role, img, onClick }) => {
   const [hover, setHover] = useState<boolean>(false);
-
-  console.log(img);
   return (
     <_.main
       onMouseEnter={() => setHover(true)}

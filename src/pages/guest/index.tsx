@@ -1,7 +1,7 @@
 import { type FC, useEffect, useRef, useState } from "react";
 import * as _ from "./style";
 import character from "@datas/character.ts";
-import guest from "@datas/guest.ts";
+import { guest } from "@datas/guest.ts";
 import View from "@components/view/viewer";
 interface Position {
   x: number;
