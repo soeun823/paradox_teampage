@@ -1,33 +1,49 @@
 import { type FC, useEffect, useRef, useState } from "react";
 import * as _ from "./style";
 import character from "@datas/character.ts";
-import { guest } from "@datas/guest.ts";
+import { loadUserData } from "@/api/user";
 import View from "@components/view/viewer";
+
 interface Position {
   x: number;
   y: number;
 }
-const guestbook = guest.map((guest) => {
-  const randomCharacter =
-    character[Math.floor(Math.random() * character.length)];
-  return {
-    name: guest.name,
-    character: randomCharacter.id,
-    pixel: randomCharacter.pixel,
-    real: randomCharacter.real,
-    comment: guest.comment,
-  };
-});
+
+interface GuestbookEntry {
+  name: string;
+  character: string;
+  pixel: string;
+  real: string;
+  comment: string;
+}
 
 const GuestPage: FC = () => {
   const vocalRef = useRef<HTMLDivElement>(null);
+  const [guestbook, setGuestbook] = useState<GuestbookEntry[]>([]);
   const [positions, setPositions] = useState<Position[]>([]);
-  const [selectedChar, setSelectedChar] = useState<
-    null | (typeof guestbook)[0]
-  >(null);
+  const [selectedChar, setSelectedChar] = useState<null | GuestbookEntry>(null);
 
   useEffect(() => {
-    if (vocalRef.current) {
+    async function fetchGuest() {
+      const guests = await loadUserData();
+      const mappedGuests = guests.map((guest) => {
+        const randomCharacter =
+          character[Math.floor(Math.random() * character.length)];
+        return {
+          name: guest.name,
+          character: randomCharacter.id,
+          pixel: randomCharacter.pixel,
+          real: randomCharacter.real,
+          comment: guest.comment,
+        };
+      });
+      setGuestbook(mappedGuests);
+    }
+    fetchGuest();
+  }, []);
+
+  useEffect(() => {
+    if (vocalRef.current && guestbook.length > 0) {
       const { offsetWidth, offsetHeight } = vocalRef.current;
       const newPositions = guestbook.map(() => ({
         x: Math.random() * (offsetWidth - 100),
@@ -35,11 +51,12 @@ const GuestPage: FC = () => {
       }));
       setPositions(newPositions);
     }
-  }, []);
+  }, [guestbook]);
 
-  const handleBook = (char: (typeof guestbook)[0]) => {
+  const handleBook = (char: GuestbookEntry) => {
     setSelectedChar(char);
   };
+
   const handleCloseBook = () => {
     setSelectedChar(null);
   };
@@ -48,22 +65,17 @@ const GuestPage: FC = () => {
     <_.main id="3">
       <_.section ref={vocalRef}>
         {guestbook.map((char, index) => (
-          <>
-            <_.charaterSet
-              onClick={() => handleBook(char)}
-              style={{
-                left: positions[index]?.x || 0,
-                top: positions[index]?.y || 0,
-              }}
-            >
-              <_.charaterImg
-                key={char.character}
-                src={char.pixel}
-                alt={char.name}
-              />
-              <_.charaterName>{char.name}</_.charaterName>
-            </_.charaterSet>
-          </>
+          <_.charaterSet
+            key={index}
+            onClick={() => handleBook(char)}
+            style={{
+              left: positions[index]?.x || 0,
+              top: positions[index]?.y || 0,
+            }}
+          >
+            <_.charaterImg src={char.pixel} alt={char.name} />
+            <_.charaterName>{char.name}</_.charaterName>
+          </_.charaterSet>
         ))}
       </_.section>
       {selectedChar && (
@@ -77,4 +89,5 @@ const GuestPage: FC = () => {
     </_.main>
   );
 };
+
 export default GuestPage;

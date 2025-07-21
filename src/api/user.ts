@@ -5,7 +5,7 @@ export interface User {
   name: string;
   comment: string;
 }
-const userData: User[] = [];
+export const userData: User[] = [];
 export async function loadUserData(): Promise<User[]> {
   const { data, error } = await supabase.from("User").select("*");
   if (error) {
