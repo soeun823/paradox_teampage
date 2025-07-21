@@ -59,6 +59,7 @@ export const list = styled.div`
     flex-direction: column;
   }
 `;
+
 export const move = styled.div`
   font-size: 1rem;
   background-color: var(--non);

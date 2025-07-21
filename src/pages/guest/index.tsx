@@ -2,8 +2,9 @@ import { type FC, useEffect, useRef, useState } from "react";
 import * as _ from "./style";
 import character from "@datas/character.ts";
 import { loadUserData } from "@/api/user";
-import View from "@components/view/viewer";
+// import Viewer from "@components/view/viewer";
 import { useSelectedCharStore } from "@/store/selectedCharStore.ts";
+import { View } from "@components/view";
 
 interface Position {
   x: number;
@@ -66,10 +67,6 @@ const GuestPage: FC = () => {
   };
 
   const selectedChar = useSelectedCharStore((state) => state.selectedChar);
-  const clearSelectedChar = useSelectedCharStore(
-    (state) => state.clearSelectedChar,
-  );
-
   return (
     <_.main id="3">
       <_.section ref={vocalRef}>
@@ -89,10 +86,10 @@ const GuestPage: FC = () => {
       </_.section>
       {selectedChar && (
         <View
-          name={selectedChar.name}
-          img={selectedChar.real}
-          comment={selectedChar.comment}
-          set={clearSelectedChar}
+        // name={selectedChar.name}
+        // img={selectedChar.real}
+        // comment={selectedChar.comment}
+        // set={clearSelectedChar}
         />
       )}
     </_.main>

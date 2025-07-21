@@ -3,9 +3,9 @@ import Editor from "@components/view/editor";
 import Viewer from "@components/view/viewer";
 
 export const View = () => {
-  const [isEditMode, setEditMode] = useState<boolean>(false);
+  const [Mode, setMode] = useState<boolean>(false);
 
-  if (isEditMode) {
-    return <Editor />;
-  } else return <Viewer />;
+  if (Mode) {
+    return <Editor setMode={setMode} />;
+  } else return <Viewer setMode={setMode} />;
 };

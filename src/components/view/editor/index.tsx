@@ -1,28 +1,23 @@
-import type { JSX } from "react";
 import * as _ from "./style.ts";
+import type { Dispatch, SetStateAction } from "react";
 interface PropsType {
-  name: string;
-  img: string;
-  comment: string;
-  set: () => void;
+  setMode: Dispatch<SetStateAction<boolean>>;
 }
-
-const Editor: ({ name, img, set }: PropsType) => JSX.Element = ({
-  name,
-  img,
-  comment,
-  set,
-}: PropsType) => {
+const Editor = ({ setMode }: PropsType) => {
   return (
     <_.infoSet>
-      <_.infoImg src={img} alt={name} />
       <_.info>
         <_.list>
-          <_.move onClick={set}>{"돌아가기"}</_.move>
+          <_.move onClick={() => setMode(false)}>{"돌아가기"}</_.move>
         </_.list>
         <_.text>
-          <_.userName>【 {name} 】</_.userName>
-          <_.comment>{comment}</_.comment>
+          <_.userName>
+            【
+            <input type={"text"} />】
+          </_.userName>
+          <_.comment>
+            <input type={"text"} />
+          </_.comment>
         </_.text>
       </_.info>
     </_.infoSet>
