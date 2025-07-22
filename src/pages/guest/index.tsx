@@ -4,6 +4,7 @@ import character from "@datas/character.ts";
 import { loadUserData } from "@/api/user";
 import { useSelectedCharStore } from "@/store/selectedCharStore.ts";
 import { View } from "@components/view";
+import { useLoadStore } from "@/store/loadStore.ts";
 
 interface Position {
   x: number;
@@ -22,11 +23,10 @@ const GuestPage: FC = () => {
   const vocalRef = useRef<HTMLDivElement>(null);
   const [guestbook, setGuestbook] = useState<GuestbookEntry[]>([]);
   const [positions, setPositions] = useState<Position[]>([]);
-  // const [selectedChar, setSelectedChar] = useState<null | GuestbookEntry>(null);
   const setSelectedCharStore = useSelectedCharStore(
     (state) => state.setSelectedChar,
   );
-
+  const { isLoad } = useLoadStore();
   useEffect(() => {
     async function fetchGuest() {
       const guests = await loadUserData();
@@ -44,7 +44,7 @@ const GuestPage: FC = () => {
       setGuestbook(mappedGuests);
     }
     fetchGuest();
-  }, []);
+  }, [isLoad]);
 
   useEffect(() => {
     if (vocalRef.current && guestbook.length > 0) {

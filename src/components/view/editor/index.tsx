@@ -2,6 +2,7 @@ import * as _ from "./style.ts";
 import { type Dispatch, type SetStateAction, useState } from "react";
 import { insertUserData } from "@/api/user.ts";
 import { useSelectedCharStore } from "@/store/selectedCharStore.ts";
+import { useLoadStore } from "@/store/loadStore.ts";
 interface PropsType {
   setMode: Dispatch<SetStateAction<boolean>>;
 }
@@ -11,12 +12,14 @@ const Editor = ({ setMode }: PropsType) => {
   const clearSelectedChar = useSelectedCharStore(
     (state) => state.clearSelectedChar,
   );
+  const { setIsLoad } = useLoadStore();
   const handleGuestBook = () => {
     insertUserData({
       name,
       comment,
     });
     clearSelectedChar();
+    setIsLoad();
   };
 
   return (
