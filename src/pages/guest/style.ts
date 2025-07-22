@@ -41,4 +41,5 @@ export const charaterName = styled.div`
   background-color: var(--non);
   text-align: center;
   color: var(--white);
+  font-family: var(--font);
 `;

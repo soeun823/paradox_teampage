@@ -2,7 +2,6 @@ import { type FC, useEffect, useRef, useState } from "react";
 import * as _ from "./style";
 import character from "@datas/character.ts";
 import { loadUserData } from "@/api/user";
-// import Viewer from "@components/view/viewer";
 import { useSelectedCharStore } from "@/store/selectedCharStore.ts";
 import { View } from "@components/view";
 
@@ -84,14 +83,7 @@ const GuestPage: FC = () => {
           </_.charaterSet>
         ))}
       </_.section>
-      {selectedChar && (
-        <View
-        // name={selectedChar.name}
-        // img={selectedChar.real}
-        // comment={selectedChar.comment}
-        // set={clearSelectedChar}
-        />
-      )}
+      {selectedChar && <View />}
     </_.main>
   );
 };

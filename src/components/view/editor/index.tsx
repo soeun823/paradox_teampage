@@ -1,17 +1,22 @@
 import * as _ from "./style.ts";
 import { type Dispatch, type SetStateAction, useState } from "react";
 import { insertUserData } from "@/api/user.ts";
+import { useSelectedCharStore } from "@/store/selectedCharStore.ts";
 interface PropsType {
   setMode: Dispatch<SetStateAction<boolean>>;
 }
 const Editor = ({ setMode }: PropsType) => {
   const [name, setName] = useState<string>("");
   const [comment, setComment] = useState<string>("");
+  const clearSelectedChar = useSelectedCharStore(
+    (state) => state.clearSelectedChar,
+  );
   const handleGuestBook = () => {
     insertUserData({
       name,
       comment,
     });
+    clearSelectedChar();
   };
 
   return (

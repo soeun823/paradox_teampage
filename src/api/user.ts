@@ -17,7 +17,6 @@ export async function loadUserData(): Promise<User[]> {
   if (data) {
     userData.length = 0;
     userData.push(...data);
-    console.log("데이터 로드됨:", userData);
   }
   return userData;
 }
