@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <_.Header>
       <_.InnerFrame>
-        <_.Location href="/#main">
+        <_.Location href="/#introduce">
           <_.Logo src={Logo} />
         </_.Location>
         <_.Nav>

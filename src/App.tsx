@@ -17,11 +17,7 @@ function App() {
   if (showVideo) {
     return <VideoIntro />;
   }
-  return (
-    <>
-      <Pages />
-    </>
-  );
+  return <Pages />;
 }
 
 export default App;

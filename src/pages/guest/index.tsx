@@ -18,16 +18,24 @@ interface GuestbookEntry {
   real: string;
   comment: string;
 }
-
 const GuestPage: FC = () => {
   const vocalRef = useRef<HTMLDivElement>(null);
   const [guestbook, setGuestbook] = useState<GuestbookEntry[]>([]);
+  console.log(guestbook);
   const [positions, setPositions] = useState<Position[]>([]);
   const setSelectedCharStore = useSelectedCharStore(
     (state) => state.setSelectedChar,
   );
   const { isLoad } = useLoadStore();
   useEffect(() => {
+    const helper = {
+      name: "방명록 도우미",
+      character: character[0].id,
+      pixel: character[0].pixel,
+      real: character[0].real,
+      comment:
+        "방명록을 남겨주세요!!\n 서로를 위해 비난표현은 자제해 주세요 ∙∙∙",
+    };
     async function fetchGuest() {
       const guests = await loadUserData();
       const mappedGuests = guests.map((guest) => {
@@ -41,7 +49,7 @@ const GuestPage: FC = () => {
           comment: guest.comment,
         };
       });
-      setGuestbook(mappedGuests);
+      setGuestbook([helper, ...mappedGuests]);
     }
     fetchGuest();
   }, [isLoad]);
